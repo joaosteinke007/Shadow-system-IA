@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shadow System AI</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/img/icon.png">
+
+  <meta property="og:title" content="Shadow System AI">
+  <meta property="og:description" content="Sistema de disciplina, hábitos e evolução pessoal">
+  <meta property="og:image" content="assets/img/icon.png">
+
+</head>
+
+<body>
+
+  <!-- SPLASH -->
+  <div id="splash">
+    <img src="assets/img/icon.png" alt="Shadow System AI">
+    <h2>SHADOW SYSTEM AI</h2>
+  </div>
+
+  <!-- LOGIN -->
+  <div class="container">
+    <div class="box">
+      <h3>🔐 LOGIN</h3>
+
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="senha" placeholder="Senha">
+
+      <div class="botoes">
+        <button onclick="registrar()">Criar Conta</button>
+        <button onclick="logar()">Entrar</button>
+        <button onclick="sair()">Sair</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TOPO -->
+  <header class="topbar">
+    <div class="logo">⚔️ SHADOW SYSTEM AI</div>
+    <div class="online">🔴 OFFLINE</div>
+  </header>
+
+  <main class="container">
+
+    <section class="grid">
+
+      <div class="box perfil">
+        <div class="avatar" id="avatar">🥷</div>
+        <h2>Nível <span id="nivel">0</span></h2>
+        <p>XP: <span id="xp">0</span>/100</p>
+      </div>
+
+      <div class="box">
+        <h3>🔥 STREAK</h3>
+        <p id="streak">0 dias seguidos</p>
+      </div>
+
+      <div class="box">
+        <h3>🧠 SHADOW IA</h3>
+        <p id="ia">Sistema de disciplina ativo...</p>
+      </div>
+
+      <div class="box">
+        <h3>📖 MOTIVAÇÃO</h3>
+        <p id="frase">"Disciplina vence motivação."</p>
+      </div>
+
+      <div class="box">
+        <h3>📊 STATUS DO DIA</h3>
+        <p id="statusDia">Comece seus hábitos hoje</p>
+      </div>
+
+      <div class="box">
+        <h3>🎤 VOZ</h3>
+        <button onclick="ouvir()">Ativar Voz</button>
+        <p id="voz"></p>
+      </div>
+
+      <div class="box">
+        <h3>📊 ATRIBUTOS</h3>
+        <div>💪 Força: <span id="forca">0</span></div>
+        <div>🫀 Resistência: <span id="resistencia">0</span></div>
+        <div>🧠 Foco: <span id="foco">0</span></div>
+      </div>
+
+      <div class="box">
+        <h3>📅 HÁBITOS</h3>
+
+        <div class="botoes">
+          <button onclick="toggleHabito('treino')">💪 Treino</button>
+          <button onclick="toggleHabito('estudo')">📚 Estudo</button>
+          <button onclick="toggleHabito('agua')">💧 Água</button>
+          <button onclick="toggleHabito('foco')">🧠 Foco</button>
+          <button onclick="toggleHabito('leitura')">📖 Leitura</button>
+        </div>
+
+        <p id="progressoDia"></p>
+      </div>
+
+      <!-- 🗺️ MAPA -->
+      <div class="box">
+        <h3>🗺️ MAPA DE EVOLUÇÃO</h3>
+
+        <div class="mapa">
+          <div class="node">🥷 Iniciante</div>
+          <div class="node">⚔️ Guerreiro</div>
+          <div class="node">🧠 Estratégico</div>
+          <div class="node">🔥 Elite</div>
+          <div class="node">👑 Lendário</div>
+        </div>
+      </div>
+
+      <div class="box">
+        <h3>📜 HISTÓRICO</h3>
+        <div id="historico"></div>
+      </div>
+
+      <div class="box">
+        <h3>🌐 PORTAL</h3>
+        <button onclick="window.open('https://share.google/lGa7z7biC9XIWqzi1')">
+          🔗 Abrir submundo
+        </button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="creditos">
+    ⚡ Shadow System AI • Evolução pessoal
+  </footer>
+
+  <!-- ⚠️ ORDEM CORRETA (IMPORTANTE) -->
+  <script src="script.js"></script>
+  <script type="module" src="firebase.js"></script>
+
+  <audio id="musica" loop preload="auto">
+    <source src="assets/audio/trilha.mp3" type="audio/mp3">
+  </audio>
+
+</body>
+</html>

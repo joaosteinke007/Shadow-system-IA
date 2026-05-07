@@ -1,0 +1,221 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+  font-family:'Orbitron',sans-serif;
+  background:#050816;
+  color:#00eaff;
+  overflow-x:hidden;
+  min-height:100vh;
+}
+
+/* =========================
+   FUNDO CYBER
+========================= */
+
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+
+  background:
+  linear-gradient(rgba(0,234,255,.05) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(0,234,255,.05) 1px, transparent 1px);
+
+  background-size:40px 40px;
+  z-index:-2;
+}
+
+body::after{
+  content:'';
+  position:fixed;
+  width:600px;
+  height:600px;
+  background:#00eaff22;
+  filter:blur(120px);
+
+  top:-200px;
+  right:-150px;
+
+  z-index:-1;
+}
+
+/* =========================
+   SPLASH (CORRIGIDO)
+========================= */
+
+#splash{
+  position:fixed;
+  inset:0;
+  background:#050816;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  z-index:99999;
+
+  transition:opacity .5s ease;
+}
+
+#splash img{
+  width:90px;
+  height:90px;
+  object-fit:contain;
+
+  filter:drop-shadow(0 0 15px #00eaff);
+  animation:pulse 1.2s infinite;
+  margin-bottom:10px;
+}
+
+#splash h2{
+  font-size:16px;
+  letter-spacing:2px;
+  color:#00eaff;
+  text-shadow:0 0 10px #00eaff;
+}
+
+/* animação logo */
+@keyframes pulse{
+  0%{transform:scale(1);opacity:.7}
+  50%{transform:scale(1.1);opacity:1}
+  100%{transform:scale(1);opacity:.7}
+}
+
+/* texto boot */
+.boot{
+  margin-top:10px;
+  font-size:12px;
+  opacity:0.6;
+  animation:blinkText 1s infinite;
+}
+
+@keyframes blinkText{
+  0%,100%{opacity:.3}
+  50%{opacity:1}
+}
+
+/* =========================
+   TOPO
+========================= */
+
+.topbar{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:20px 30px;
+  background:rgba(0,0,0,.45);
+  border-bottom:1px solid rgba(0,234,255,.15);
+
+  backdrop-filter:blur(12px);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-shadow:0 0 15px #00eaff;
+}
+
+.online{
+  color:#00ff88;
+  font-size:14px;
+}
+
+/* =========================
+   CONTAINER / GRID
+========================= */
+
+.container{
+  width:100%;
+  max-width:1500px;
+  margin:auto;
+  padding:30px 20px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:20px;
+}
+
+/* =========================
+   BOX
+========================= */
+
+.box{
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border:1px solid rgba(0,234,255,.18);
+  border-radius:24px;
+
+  padding:25px;
+  backdrop-filter:blur(12px);
+
+  transition:.3s;
+}
+
+.box:hover{
+  transform:translateY(-6px);
+  border-color:#00eaff;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+.botoes{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+button{
+  border:none;
+  padding:14px 20px;
+  border-radius:14px;
+
+  background:linear-gradient(90deg,#00eaff,#0077ff);
+  color:#000;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* =========================
+   HISTÓRICO
+========================= */
+
+#historico div{
+  background:rgba(255,255,255,.03);
+  padding:10px;
+  border-left:3px solid #00eaff;
+  border-radius:10px;
+  margin-bottom:8px;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:768px){
+  .topbar{
+    flex-direction:column;
+    gap:10px;
+  }
+}
